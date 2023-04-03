@@ -21,8 +21,8 @@ public class BoardController {
 
     @GetMapping(value = "/")
     public String list(Model model){
-        List<Board> boards = boardService.findBoards();
-        model.addAttribute("boards", boards);
-        return "/boardList";
+        List<Board> board = boardService.findBoards();
+        model.addAttribute("board", board);
+        return "BoardHome";
     }
 }

@@ -10,7 +10,7 @@ public class Board {
     private Long board_id;
     private String title;
     private String author;
-    private Date create_date;
+    private Date create_time;
     private String contents;
 
     public Long getBoard_id() {
@@ -37,12 +37,12 @@ public class Board {
         this.author = author;
     }
 
-    public Date getCreate_date() {
-        return create_date;
+    public Date getCreate_time() {
+        return create_time;
     }
 
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
+    public void setCreate_time(Date create_date) {
+        this.create_time = create_time;
     }
 
 
