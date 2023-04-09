@@ -13,7 +13,7 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
-    public Board write(Board board) {
+    public Board create(Board board) {
         em.persist(board);
         return board;
     }

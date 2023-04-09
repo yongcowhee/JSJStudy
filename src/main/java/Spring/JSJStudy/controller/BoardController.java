@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BoardController {
@@ -19,10 +18,21 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-    @GetMapping(value = "/")
-    public String list(Model model){
-        List<Board> board = boardService.findBoards();
-        model.addAttribute("board", board);
-        return "BoardHome";
+    @GetMapping(value = "/new")
+    public String createForm(){
+        return "boards/CreateContents";
     }
+
+    @PostMapping("/new")
+    public String create(BoardForm form){
+        Board board = new Board();
+        board.setBoardId(form.getBoardId());
+        board.setCreateTime(form.getCreateTime());
+        board.setAuthor(form.getAuthor());
+        board.setContents(form.getContents());
+        board.setTitle(form.getTitle());
+        boardService.create(board);
+        return "redirect:/";
+    }
+
 }
