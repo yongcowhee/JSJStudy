@@ -16,8 +16,8 @@ public class BoardService {
     /**
      * 글쓰기
      */
-    public Long write(Board board){
-        boardRepository.write(board);
+    public Long create(Board board){
+        boardRepository.create(board);
         return board.getBoardId();
     }
 

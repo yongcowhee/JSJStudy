@@ -19,6 +19,11 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
+    public Board modifyBoard(Board board) {
+        return null;
+    }
+
+    @Override
     public List<Board> findByTitle(String title) {
         List<Board> result = em.createQuery("select b from Board b where b.title = :title", Board.class)
                 .setParameter("title", title)
