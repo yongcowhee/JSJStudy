@@ -19,19 +19,19 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
-    public Optional<Board> findByTitle(String title) {
+    public List<Board> findByTitle(String title) {
         List<Board> result = em.createQuery("select b from Board b where b.title = :title", Board.class)
                 .setParameter("title", title)
                 .getResultList();
-        return result.stream().findAny();
+        return result;
     }
 
     @Override
-    public Optional<Board> findByAuthor(String author) {
+    public List<Board> findByAuthor(String author) {
         List<Board> result = em.createQuery("select b from Board b where b.author = :author", Board.class)
                 .setParameter("author", author)
                 .getResultList();
-        return result.stream().findAny();
+        return result;
     }
 
     @Override

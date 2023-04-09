@@ -2,7 +2,6 @@ package Spring.JSJStudy.service;
 
 import Spring.JSJStudy.domain.Board;
 import Spring.JSJStudy.repository.BoardRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class BoardService {
      */
     public Long write(Board board){
         boardRepository.write(board);
-        return board.getBoard_id();
+        return board.getBoardId();
     }
 
     /**

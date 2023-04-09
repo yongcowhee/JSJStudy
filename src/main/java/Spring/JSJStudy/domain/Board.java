@@ -1,24 +1,27 @@
 package Spring.JSJStudy.domain;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 public class Board {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long board_id;
+    private Long boardId;
     private String title;
     private String author;
-    private Date create_time;
+    private LocalDateTime createTime; // modified: snake case to camel case, Date to LocalDateTime
     private String contents;
 
-    public Long getBoard_id() {
-        return board_id;
+    public Long getBoardId() {
+        return boardId;
     }
 
-    public void setBoard_id(Long board_id) {
-        this.board_id = board_id;
+    public void setBoardId(Long boardId) {
+        this.boardId = boardId;
     }
 
     public String getTitle() {
@@ -37,14 +40,13 @@ public class Board {
         this.author = author;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public LocalDateTime getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(Date create_date) {
-        this.create_time = create_time;
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
     }
-
 
     public String getContents() {
         return contents;

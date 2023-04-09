@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface BoardRepository {
     Board write(Board board);
-    Optional<Board> findByTitle(String title);
-    Optional<Board> findByAuthor(String author);
+    List<Board> findByTitle(String title);
+    List<Board> findByAuthor(String author);
     List<Board> findAll();
 }
