@@ -34,6 +34,7 @@ public class BoardForm {
     }
 
     public LocalDateTime getCreateTime() {
+        createTime = LocalDateTime.now();
         return createTime;
     }
 

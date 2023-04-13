@@ -4,7 +4,10 @@ create table board(
     title varchar(255),
     author varchar(255),
     create_time timestamp DEFAULT CURRENT_TIMESTAMP
+
 );
 
 insert into board (title, author, contents) values ('진성아 넌 최고야', '윤지원', '진성이가 오늘 나와 함께 Spring 공부를 해줬다.')
 insert into board (title, author, contents) values ('용소희 존멋탱', '윤지콩', '오류해결 존멋탱')
+
+

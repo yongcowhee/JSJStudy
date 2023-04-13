@@ -11,4 +11,6 @@ public interface BoardRepository {
     List<Board> findByTitle(String title);
     List<Board> findByAuthor(String author);
     List<Board> findAll();
-}
+    void deleteById(Long id);
+    }
+

@@ -2,8 +2,10 @@ package Spring.JSJStudy.service;
 
 import Spring.JSJStudy.domain.Board;
 import Spring.JSJStudy.repository.BoardRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 // @Service
 public class BoardService {
@@ -26,5 +28,13 @@ public class BoardService {
      */
     public List<Board> findBoards(){
         return boardRepository.findAll();
+    }
+
+    /**
+     * 글 삭제
+     */
+    @Transactional
+    public void delete(Long id){
+        boardRepository.deleteById(id);
     }
 }

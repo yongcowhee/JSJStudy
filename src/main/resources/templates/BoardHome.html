@@ -18,13 +18,20 @@
                 <td th:text="${board.title}"></td>
                 <td th:text="${board.author}"></td>
                 <td th:text="${board.createTime}"></td>
+                <form id="delete" th:action = "@{'/delete/' + ${board.boardId}}" method="post">
+                    <input type="hidden" name = "_method" value = "delete"/>
+                    <td>
+                        <button>삭제</button>
+                    </td>
+                </form>
+
             </tr>
             </tbody>
         </table>
     </div>
     <div>
         <p>
-            <a href="/new">글쓰기</a>
+            <button><a href="/new">글쓰기</a></button>
         </p>
     </div>
 </div> <!-- /container -->
