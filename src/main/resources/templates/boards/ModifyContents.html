@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>게시판</title>
+</head>
+<body>
+
+<div id="root">
+  <header>
+    <h1> 게시판</h1>
+  </header>
+  <hr />
+
+  <nav>
+    공주님~ 글 수정해주세요 제발
+  </nav>
+  <hr />
+
+  <section id="container">
+    <form role="form" method="post" action="/modify">
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <label for="title">제목</label><input type="text" id="title" name="title" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="contents">내용</label><textarea id="contents" name="contents" ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="author">작성자</label><input type="text" id="author" name="author" />
+          </td>
+        <tr>
+          <td>
+            <button type="submit">수정 </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+  </section>
+  <hr />
+</div>
+</body>
+</html>

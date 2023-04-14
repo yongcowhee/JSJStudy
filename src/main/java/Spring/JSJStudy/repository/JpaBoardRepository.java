@@ -19,8 +19,16 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
-    public Board modifyBoard(Board board) {
-        return null;
+    public Board modify(Long id) {
+        Board board = em.find(Board.class , id);
+        em.merge(board);
+        return board;
+    }
+
+    @Override
+    public Board findById(Long id) {
+        Board findBoard = em.find(Board.class, id);
+        return findBoard;
     }
 
     @Override
@@ -47,7 +55,6 @@ public class JpaBoardRepository implements BoardRepository{
 
     @Override
     public void deleteById(Long id) {
-        Board findBoard = em.find(Board.class, id);
-        em.remove(findBoard);
+        em.remove(findById(id));
     }
 }
