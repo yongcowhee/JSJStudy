@@ -2,7 +2,6 @@ package Spring.JSJStudy.repository;
 import Spring.JSJStudy.domain.Board;
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.Optional;
 
 public class JpaBoardRepository implements BoardRepository{
 
@@ -15,13 +14,6 @@ public class JpaBoardRepository implements BoardRepository{
     @Override
     public Board create(Board board) {
         em.persist(board);
-        return board;
-    }
-
-    @Override
-    public Board modify(Long id) {
-        Board board = em.find(Board.class , id);
-        em.merge(board);
         return board;
     }
 

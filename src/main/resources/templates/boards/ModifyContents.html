@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>게시판</title>
 </head>
@@ -15,9 +15,9 @@
     공주님~ 글 수정해주세요 제발
   </nav>
   <hr />
-
   <section id="container">
-    <form role="form" method="post" action="/modify">
+    <form id="modify" th:object="${test}" th:action = "@{'/modify/'+ ${board.boardId}}" method="post">
+      <input type="hidden" name = "_method" value = "put"/>
       <table>
         <tbody>
         <tr>
@@ -36,7 +36,7 @@
           </td>
         <tr>
           <td>
-            <button type="submit">수정 </button>
+            <button type="submit">수정</button>
           </td>
         </tr>
         </tbody>

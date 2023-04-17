@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.yaml.snakeyaml.events.Event;
 
 @Controller
 @Transactional
@@ -44,14 +45,17 @@ public class BoardController {
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(@PathVariable("id") Long id){
-        boardService.edit(id);
+    public String edit(@PathVariable("id") Long id, Model model){
+        Board board = boardService.findBoardByBoardId(id);
+        model.addAttribute("board", board);
+        boardService.findBoardByBoardId(id);
         return "boards/ModifyContents";
     }
 
-    @PutMapping
-    public String modify(@PathVariable("id") Long id){
-        boardService.modify(id);
+    @PutMapping("/modify/{id}")
+    public String modify(@PathVariable("id") Long id, Board board){
+        Board findBoard = boardService.findBoardByBoardId(id); // DB에 입력된 값, 1차캐시 생성 시점
+        boardService.modify(findBoard, board);
         return "redirect:/";
     }
 
