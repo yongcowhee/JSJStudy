@@ -16,7 +16,7 @@
   </nav>
   <hr />
   <section id="container">
-    <form id="modify" th:object="${test}" th:action = "@{'/modify/'+ ${board.boardId}}" method="post">
+    <form id="modify" th:object="${test}" th:action = "@{'/board/'+ ${board.boardId}}" method="post">
       <input type="hidden" name = "_method" value = "put"/>
       <table>
         <tbody>

@@ -1,49 +1,41 @@
-package Spring.JSJStudy.controller;
+package Spring.JSJStudy.domain;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import lombok.Getter;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
-public class BoardForm {
+@Entity
+@Table(name = "BOARD")
+@Getter
+public class BoardEntity {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long boardId;
     private String title;
     private String author;
-    private LocalDateTime createTime;
+    private LocalDateTime createTime; // modified: snake case to camel case, Date to LocalDateTime
     private String contents;
 
-    public Long getBoardId() {
-        return boardId;
-    }
 
     public void setBoardId(Long boardId) {
         this.boardId = boardId;
-    }
-
-    public String getTitle() {
-        return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
     public void setAuthor(String author) {
         this.author = author;
     }
 
-    public LocalDateTime getCreateTime() {
-        createTime = LocalDateTime.now();
-        return createTime;
-    }
 
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
-    }
-
-    public String getContents() {
-        return contents;
     }
 
     public void setContents(String contents) {

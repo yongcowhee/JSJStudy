@@ -1,6 +1,6 @@
 package Spring.JSJStudy.controller;
 
-import Spring.JSJStudy.domain.Board;
+import Spring.JSJStudy.domain.BoardEntity;
 import Spring.JSJStudy.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ BoardHomeController {
 
     @GetMapping(value = "/")
     public String list(Model model){
-        List<Board> board = boardService.findBoards();
+        List<BoardEntity> board = boardService.findBoards();
         model.addAttribute("board", board);
         return "BoardHome";
     }

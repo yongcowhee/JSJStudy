@@ -1,19 +1,12 @@
-package Spring.JSJStudy.domain;
+package Spring.JSJStudy.controller;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-
-import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-@Entity
-public class Board {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class createDTO {
     private Long boardId;
     private String title;
     private String author;
-    private LocalDateTime createTime; // modified: snake case to camel case, Date to LocalDateTime
+    private LocalDateTime createTime;
     private String contents;
 
     public Long getBoardId() {
@@ -41,6 +34,7 @@ public class Board {
     }
 
     public LocalDateTime getCreateTime() {
+        createTime = LocalDateTime.now();
         return createTime;
     }
 

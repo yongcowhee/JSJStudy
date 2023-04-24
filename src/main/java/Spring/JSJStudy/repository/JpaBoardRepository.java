@@ -1,5 +1,5 @@
 package Spring.JSJStudy.repository;
-import Spring.JSJStudy.domain.Board;
+import Spring.JSJStudy.domain.BoardEntity;
 import javax.persistence.EntityManager;
 import java.util.List;
 
@@ -12,36 +12,36 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
-    public Board create(Board board) {
+    public BoardEntity create(BoardEntity board) {
         em.persist(board);
         return board;
     }
 
     @Override
-    public Board findById(Long id) {
-        Board findBoard = em.find(Board.class, id);
+    public BoardEntity findById(Long id) {
+        BoardEntity findBoard = em.find(BoardEntity.class, id);
         return findBoard;
     }
 
     @Override
-    public List<Board> findByTitle(String title) {
-        List<Board> result = em.createQuery("select b from Board b where b.title = :title", Board.class)
+    public List<BoardEntity> findByTitle(String title) {
+        List<BoardEntity> result = em.createQuery("select b from BoardEntity b where b.title = :title", BoardEntity.class)
                 .setParameter("title", title)
                 .getResultList();
         return result;
     }
 
     @Override
-    public List<Board> findByAuthor(String author) {
-        List<Board> result = em.createQuery("select b from Board b where b.author = :author", Board.class)
+    public List<BoardEntity> findByAuthor(String author) {
+        List<BoardEntity> result = em.createQuery("select b from BoardEntity b where b.author = :author", BoardEntity.class)
                 .setParameter("author", author)
                 .getResultList();
         return result;
     }
 
     @Override
-    public List<Board> findAll() {
-        return em.createQuery("select b from Board b", Board.class)
+    public List<BoardEntity> findAll() {
+        return em.createQuery("select b from BoardEntity b", BoardEntity.class)
                 .getResultList();
     }
 

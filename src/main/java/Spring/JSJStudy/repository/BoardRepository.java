@@ -1,15 +1,15 @@
 package Spring.JSJStudy.repository;
 
-import Spring.JSJStudy.domain.Board;
+import Spring.JSJStudy.domain.BoardEntity;
 
 import java.util.List;
 
 public interface BoardRepository {
-    Board create(Board board);
-    List<Board> findByTitle(String title);
-    List<Board> findByAuthor(String author);
-    List<Board> findAll();
-    Board findById(Long id);
+    BoardEntity create(BoardEntity board);
+    List<BoardEntity> findByTitle(String title);
+    List<BoardEntity> findByAuthor(String author);
+    List<BoardEntity> findAll();
+    BoardEntity findById(Long id);
     void deleteById(Long id);
     }
 

@@ -1,6 +1,5 @@
 package Spring.JSJStudy;
 
-import Spring.JSJStudy.domain.Board;
 import Spring.JSJStudy.repository.BoardRepository;
 import Spring.JSJStudy.repository.JpaBoardRepository;
 import Spring.JSJStudy.service.BoardService;

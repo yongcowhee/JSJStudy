@@ -19,14 +19,14 @@
                 <td th:text="${board.author}"></td>
                 <td th:text="${board.createTime}"></td>
 
-                <form id="edit" th:action = "@{'/edit/'+ ${board.boardId}}" method="get">
+                <form id="board" th:action = "@{'/board/'+ ${board.boardId}}" method="get">
                     <td>
                         <button>수정</button>
                     </td>
                 </form>
 
 
-                <form id="delete" th:action = "@{'/delete/' + ${board.boardId}}" method="post">
+                <form id="delete" th:action = "@{'/board/' + ${board.boardId}}" method="post">
                     <input type="hidden" name = "_method" value = "delete"/>
                     <td>
                         <button>삭제</button>

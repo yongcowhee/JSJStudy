@@ -1,6 +1,7 @@
 package Spring.JSJStudy.service;
 
-import Spring.JSJStudy.domain.Board;
+import Spring.JSJStudy.controller.updateDTO;
+import Spring.JSJStudy.domain.BoardEntity;
 import Spring.JSJStudy.repository.BoardRepository;
 import java.util.List;
 
@@ -15,21 +16,21 @@ public class BoardService {
     /**
      * 글쓰기
      */
-    public void create(Board board){
+    public void create(BoardEntity board){
         boardRepository.create(board);
     }
 
     /**
      * 전체 글 조회
      */
-    public List<Board> findBoards(){
+    public List<BoardEntity> findBoards(){
         return boardRepository.findAll();
     }
 
     /**
      * 특정 글 조회
      */
-    public Board findBoardByBoardId(Long id){
+    public BoardEntity findBoardByBoardId(Long id){
         return boardRepository.findById(id);
     }
     /**
@@ -39,7 +40,7 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
-    public void modify(Board findBoard, Board inputBoard){
+    public void modify(BoardEntity findBoard, updateDTO inputBoard){
         // 더티 체킹을 위해선 뭘 해줘야 할까?
         // 더티 체킹이 뭐였더라?
         // 1차 캐시는 이미 생성되었고, 그럼 뭘 해야 할까
